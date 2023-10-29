@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('bkimg.png');
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            min-height: 100vh;
+        }
+        .navbar {
+            background: linear-gradient(rgba(0, 123, 255, 0.7), rgba(0, 123, 255, 0.7)), url('navigation.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .navbar a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #0056b3;
+            animation: navBarHover 0.3s ease-in-out;
+        }
+        @keyframes navBarHover {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        .language-select {
+            margin-top: 14px;
+        }
+        .language-select label {
+            color: #f2f2f29c;
+            margin-right: 5px;
+        }
+        .language-select select {
+            padding: 5px;
+            border-radius: 4px;
+        }
+        .contact-form {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            transition: border-color 0.3s ease-in-out;
+        }
+        .contact-form input[type="text"]:focus,
+        .contact-form input[type="email"]:focus,
+        .contact-form textarea:focus {
+            border-color: #4CAF50;
+        }
+        .contact-form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .contact-form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            width: 100px;
+            margin-right: 10px;
+        }
+        .logo h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .chat-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .chat-container .chat-message {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .chat-container .chat-message .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin-right: 10px;
+            flex-shrink: 0;
+            background-size: cover;
+            background-position: center center;
+        }
+        .chat-container .chat-message .message-content {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .chat-container .chat-message .message-content p {
+            margin: 0;
+        }
+        .chat-container .chat-message .message-content .timestamp {
+            font-size: 12px;
+            color: #888;
+        }
+        .chat-container .chat-message .message-content.sent {
+            align-self: flex-end;
+        }
+        .chat-container .chat-message .message-content.received {
+            align-self: flex-start;
+        }
+         /* Style for the footer container */
+  .footer-container {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 123, 255, 0.7), rgba(0, 123, 255, 0.7)), url('navigation.png'); 
+            background-repeat: no-repeat; 
+            background-size: cover; 
+            background-position: center center; 
+            padding: 10px; 
+  }
+
+  /* Style for the footer links */
+  .footer-links {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+  }
+
+  /* Style for the footer link items */
+  .footer-links li {
+    margin-right: 10px;
+  }
+
+  /* Style for the footer link text */
+  .footer-links li a {
+    color: white;
+    text-decoration: none;
+  }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="login.html">Login or Sign Up</a>
+        <a href="home.html">Home</a>
+        <a href="Discussion Page.html">Discussion</a>
+        <a href="about1.html">About Us</a>
+        <a href="Contact Us.html">Contact Us</a>
+        <a href="Share resources.html">Share Resources</a>
+        <a href="calendar.html">Calendar</a>
+        <div class="language-select">
+            <label for="language-select">Select Language:</label>
+            <select id="language-select" onchange="changeLanguage()">
+                <option value="en" selected>English</option>
+                <option value="fr">French</option>
+                <option value="es">Spanish</option>
+            </select>
+        </div>
+    </div>
+    <div class="contact-form">
+        <div class="logo">
+            <img src="Option 2.gif" alt="Business Logo">
+            <h1>CTU-Buddy</h1>
+        </div>
+        <form action="" autocomplete="off" onsubmit="submitMessage(event)">
+            <p>Contact Us</p>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <input type="submit" value="Submit">
+        </form>
+        <p>Email: info@ctubuddy.com</p>
+        <p>Phone: +1 123-456-7890</p>
+    </div>
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-message">
+            <div class="avatar" style="background-image: url('pfp1.jpg');"></div>
+            <div class="message-content received">
+                <p>CTU-Buddy is kak duidelik my bra</p>
+                <p class="timestamp">10:00 </p>
+            </div>
+        </div>
+        <div class="chat-message">
+            <div class="avatar" style="background-image: url('pfp2.jpg');"></div>
+            <div class="message-content sent">
+                <p>Exe this is the lekkah tye</p>
+                <p class="timestamp">10:05 </p>
+            </div>
+        </div>
+        <div class="chat-message">
+            <div class="avatar" style="background-image: url('pfp3.jpg');"></div>
+            <div class="message-content received">
+                <p>Now this makes life so much easier!</p>
+                <p class="timestamp">10:10 </p>
+            </div>
+        </div>
+        <!-- More chat messages here -->
+    </div>
+    <script>
+        function changeLanguage() {
+            // Code to change the language conversation based on selected language
+        }
+        
+        function submitMessage(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            const chatContainer = document.getElementById('chatContainer');
+            
+            const newMessage = document.createElement('div');
+            newMessage.className = 'chat-message';
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'avatar';
+            avatar.style.backgroundImage = `url('pfp4.jpg')`;
+            
+            const messageContent = document.createElement('div');
+            messageContent.className = 'message-content sent';
+            
+            const messageText = document.createElement('p');
+            messageText.innerText = message;
+            
+            const timestamp = document.createElement('p');
+            timestamp.className = 'timestamp';
+            timestamp.innerText = getCurrentTimestamp();
+            
+            messageContent.appendChild(messageText);
+            messageContent.appendChild(timestamp);
+            
+            newMessage.appendChild(avatar);
+            newMessage.appendChild(messageContent);
+            
+            chatContainer.appendChild(newMessage);
+            
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+        }
+        
+        function getCurrentTimestamp() {
+            const date = new Date();
+            const hours = date.getHours().toString().padStart(2, '0');
+            const minutes = date.getMinutes().toString().padStart(2, '0');
+            
+            return `${hours}:${minutes}`;
+        }
+    </script>
+    <footer>
+        <div class="footer-container">
+          <ul class="footer-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="discussion.html">Discussion</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="resources.html">Share Resources</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+          </ul>
+        </div>
+        </div>
+      </footer>
+</body>
+</html>

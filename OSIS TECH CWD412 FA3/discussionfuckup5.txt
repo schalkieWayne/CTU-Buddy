@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dstyles.css">
+    <script src="script.js" defer></script>
+    <title>Discussion Page</title>
+    <style>
+        /* ...existing styles... */
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <!-- ...existing navbar links... -->
+    </div>
+    <div class="chat-container">
+        <div id="chat-area">
+            <!-- Sample chat messages (You can replace these with actual dynamic messages) -->
+            <div class="message">
+                Hey everyone, have you tried CTU-Buddy? It's been such a game changer for me!
+            </div>
+            <div class="message">
+                Yes, I have! CTU-Buddy is amazing. It helps keep all my tasks organized, and the UI is super intuitive.
+            </div>
+            <div class="message">
+                CTU-Buddy has made my life so much easier. I can't imagine managing my projects without it.
+            </div>
+        </div>
+        <div class="comment-section">
+            <textarea id="user-comment" placeholder="Type your message..."></textarea>
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <footer>
+        &copy; 2022 Your Website. All rights reserved.
+    </footer>
+    <script>
+        // Function to send a new message
+        function sendMessage() {
+            const chatArea = document.getElementById('chat-area');
+            const userComment = document.getElementById('user-comment');
+            if (userComment.value.trim() !== '') {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message');
+                messageDiv.textContent = userComment.value;
+                chatArea.appendChild(messageDiv);
+                // Reset the textarea and scroll chat to the newest message
+                userComment.value = '';
+                chatArea.scrollTop = chatArea.scrollHeight;
+            }
+        }
+    </script>
+    <footer>
+        <!-- ...existing footer content... -->
+    </footer>
+</body>
+</html>

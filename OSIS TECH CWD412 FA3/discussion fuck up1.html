@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="dstyles.css">
+        <script src="script.js" defer></script>
+        <title>Discussion Page</title>
+        
+    </head>
+<body>
+    <!-- ... (Your existing HTML content) ... -->
+
+    <div class="chat-container">
+        <div id="chat-area">
+            <!-- Display stored comments when the page loads -->
+        </div>
+        <div class="comment-section">
+            <textarea id="user-comment" placeholder="Type your message..."></textarea>
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <!-- ... (Your existing HTML content) ... -->
+
+    <script>
+        // Function to send a new message and store it locally
+        function sendMessage() {
+            var userComment = document.getElementById("user-comment").value;
+
+            if (userComment.trim() !== "") {
+                // Get existing comments from local storage or initialize an empty array
+                var comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+                // Add the new comment
+                comments.push(userComment);
+
+                // Save the updated comments array back to local storage
+                localStorage.setItem("comments", JSON.stringify(comments));
+
+                // Update the chat area to display all comments
+                displayComments();
+
+                // Clear the input field
+                document.getElementById("user-comment").value = "";
+            }
+        }
+
+        // Function to display comments in the chat area
+        function displayComments() {
+            var comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+            var chatArea = document.getElementById("chat-area");
+            chatArea.innerHTML = "";
+
+            comments.forEach(function (comment) {
+                var messageDiv = document.createElement("div");
+                messageDiv.classList.add("message");
+                messageDiv.textContent = comment;
+                chatArea.appendChild(messageDiv);
+            });
+        }
+
+        // Display comments when the page loads
+        displayComments();
+
+        // ... (Your existing code, including changeLanguage() function) ...
+    </script>
+
+    <!-- ... (Your existing HTML content) ... -->
+</body>
+</html>

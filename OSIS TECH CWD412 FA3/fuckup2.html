@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url('bkimg.png');
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+        background-size: cover;
+        background-position: center center;
+    }
+    .navbar {
+        background: linear-gradient(rgba(0, 123, 255, 0.7), rgba(0, 123, 255, 0.7)), url('navigation.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        padding: 10px;
+    }
+    .navbar a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        transition: color 0.7s ease;
+    }
+    .navbar a:hover {
+        color: #0056b3;
+        animation: navBarHover 0.7s ease-in-out;
+    }
+    @keyframes navBarHover {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-5px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    .container {
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .about-content {
+        background: linear-gradient(to bottom, #ddd, #bbb);
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .footer-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(rgba(0, 123, 255, 0.7), rgba(0, 123, 255, 0.7));
+        padding: 10px;
+    }
+    .footer-links {
+        list-style-type: none;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .footer-links li {
+        margin-right: 10px;
+    }
+    .footer-links li a {
+        color: white;
+        text-decoration: none;
+    }
+    .footer-logo {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+    .footer-text {
+        color: white;
+    }
+    .discussion {
+        max-width: 800px;
+        margin: 40px auto;
+        background-color: rgba(18, 60, 245, 0.548);
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .team-members {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .team-member {
+        text-align: center;
+        flex-basis: calc(33.333% - 10px);
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+    }
+    .team-member:hover {
+        transform: scale(1.05);
+    }
+    .team-member img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        transition: transform 0.3s ease;
+    }
+    .team-member img:hover {
+        transform: scale(1.1);
+    }
+    .team-member-desc {
+        margin-top: 10px;
+        font-size: 14px;
+        text-align: center;
+        padding: 10px;
+        border-radius: 5px;
+        background: linear-gradient(rgba(0, 123, 255, 0.3), rgba(0, 123, 255, 0.3)), url('background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        color: #000000;
+        font-size: 14px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    .team-member:hover .team-member-desc {
+        opacity: 1;
+    }
+  </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="Login.html">Login or Sign Up</a>
+        <a href="home.html">Home</a>
+        <a href="Discussion Page.html">Discussion</a>
+        <a href="about1.html">About Us</a>
+        <a href="Contact Us11.html">Contact Us</a>
+        <a href="Share resources.html">Share Resources</a>
+        <a href="#">Calendar</a>
+        <div class="language-select">
+            <label for="language-select">Select Language:</label>
+            <select id="language-select" onchange="changeLanguage()">
+                <option value="en" selected>English</option>
+                <option value="fr">French</option>
+                <option value="es">Spanish</option>
+            </select>
+        </div>
+    </div>
+    <div class="discussion">
+        <h2>Meet the Software Team</h2>
+        <div class="team-members">
+            <!-- Team members details -->
+            <div class="team-member">
+                <img src="schalk.jpeg" alt="Schalk">
+                <p>Schalk</p>
+                <div class="team-member-desc">My name is Schalk and I love coding. My hobbies are beeing Batman.</div>
+            </div>
+            <div class="team-member">
+                <img src="ewan.jpg" alt="Ewan">
+                <p>Ewan</p>
+                <div class="team-member-desc">My name is Ewan. I discovered my love for coding in high school, embracing its endless potential. Surfing is my escape, a way to refresh my mind.</div>
+            </div>
+            <div class="team-member">
+                <img src="jarren.jpeg" alt="Jarren">
+                <p>Jarren</p>
+                <div class="team-member-desc">My name is Jarren. I'm a developer, always evolving with technology's pace. Fantasy novels are my escape from reality.</div>
+            </div>
+            <div class="team-member">
+                <img src="jason.png" alt="Jay-Jay">
+                <p>Jay-Jay</p>
+                <div class="team-member-desc">My name is Jay-Jay. Software development fascinates me because of the collaborative aspect and learning from different people. When I am not coding, you can find me in front of my PC gaming.</div>
+            </div>
+            <div class="team-member">
+                <img src="jason2.png" alt="Jason">
+                <p>Jason</p>
+                <div class="team-member-desc">My name is Jason. The software engineering bug bit me when I realized that the only limit is my imagination. My favorite hobby is gardening because it allows me to see things grow!</div>
+            </div>
+            <div class="team-member">
+                <img src="malachai.png" alt="Malachi">
+                <p>Malachi</p>
+                <div class="team-member-desc">My name is Malachi. The similarities between puzzle-building and coding are endless, but my favorite part of both is definitely attention to detail and problem-solving.</div>
+            </div>
+            <div class="team-member">
+                <img src="miggie.png" alt="Maghmood">
+                <p>Maghmood</p>
+                <div class="team-member-desc">My name is Maghmood. Coding is fun because it allows me to hone my skills and become a better programmer. I am a board game fanatic, especially The Settlers of Catan.</div>
+            </div>
+            <div class="team-member">
+                <img src="sima.jpg" alt="Simamkele">
+                <p>Simamkele</p>
+                <div class="team-member-desc">My name is Simamkele. I enjoy working with people as well as working on my own, and that is why I enjoy coding. Cycling is my favorite form of exercise.</div>
+            </div>
+            <div class="team-member">
+                <img src="delandrio.png" alt="Delandrio">
+                <p>Delandrio</p>
+                <div class="team-member-desc">Meet Delandrio, loves football that transcends the boundaries of mere fandom. When not cheering for their favorite team.</div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="heading">
+        <h2>About us</h2>
+        <p>At CTU-Buddy, our mission is to provide a user-friendly and efficient platform that empowers CTU students to excel academically and engage actively within the campus community.</p>
+        <p>We understand the challenges that students face – from managing assignments and accessing important documents to connecting with faculty and peers.</p>
+        <p>That's why we have meticulously designed and developed this website to address these pain points and offer a seamless experience.</p>
+      </div>
+        <section class="about">
+          <div class="about-image">
+            <img src="Images/Being an older student.png">
+          </div>
+          <div class="about-content">
+            <h2>Main challenge</h2>
+            <p>The inception of CTU-Buddy can be traced back to a shared frustration among our founding members.</p>
+            <p>As students ourselves, we often found it cumbersome to manage the various documents, assignments, and resources required throughout our academic pursuits.</p>
+            <p>We recognized the need for a centralized platform that could streamline these processes and enhance communication within the campus community.</p>
+            <p>Our brainstorming sessions, fueled by late-night study sessions and countless cups of coffee, led us to envision a comprehensive website that would revolutionize student life on campus.</p>
+            <p>The idea was simple yet powerful: create a virtual "buddy" that students could rely on for quick access to document uploads, announcements, and a direct line of communication with university departments.</p>
+            
+            <h2>Our Mission</h2>
+            <p>At CTU-Buddy, our mission is to provide a user-friendly and efficient platform that empowers CTU students to excel academically and engage actively within the campus community. We understand the challenges that students face – from managing assignments and accessing important documents to connecting with faculty and peers. That's why we have meticulously designed and developed this website to address these pain points and offer a seamless experience.</p>
+            <h2>Key Features</h2>
+            <p>1.Digital Docs: Say goodbye to paper clutter! Upload, store, and retrieve your academic materials effortlessly with CTU-Buddy.</p>
+            <p>2.Quick Connect: Our "Contact Us" page is a direct portal to faculty, departments, and support. Have a question or feedback? Reach out with ease.</p>
+            <p>3.Event Hub: Stay updated on CTU events, from insightful seminars to vibrant gatherings, ensuring you're always in the loop.</p>
+            <p>4.Course Forums: Engage in subject-centric forums. Share insights, seek answers, and collaborate on academic quandaries.
+            <p>5.Resource Tracker: Bookmark and quickly access essential academic tools and resources tailored to your courses and interests.</p>
+            <p>6.Notifications**: Get real-time alerts on grades, assignment due dates, and university announcements, keeping you always informed.</p>
+              
+            <h3> <p>Hop on for a simplified, yet enriched CTU-Buddy journey!</p></h3>
+          </div>
+        </section>
+      </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <ul class="footer-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="Discussion Page.html">Discussion</a></li>
+                <li><a href="fuckup2.html">About Us</a></li>
+                <li><a href="Contact Us11.html">Contact Us</a></li>
+                <li><a href="Share resources.html">Share Resources</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><img src="Logo.png" alt="Logo" class="footer-logo"></li>
+                <li><p class="footer-text">&copy; CTU-Buddy 2023. All rights reserved.</p></li>
+            </ul>
+        </div>
+        </div>
+      </footer>
+</body>
+</html>

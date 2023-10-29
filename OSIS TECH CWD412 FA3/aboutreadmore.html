@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="about.css">
+  <title>About Us</title>
+  <style>
+    .hide-content {
+      display: none;
+    }
+  </style>
+  <script>
+    function toggleContent() {
+      var content = document.getElementById("more-content");
+      var toggleButton = document.getElementById("toggle-button");
+
+      if (content.style.display === "none") {
+        content.style.display = "block";
+        toggleButton.innerText = "Show less";
+      } else {
+        content.style.display = "none";
+        toggleButton.innerText = "Show more";
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <img class="ctu-buddy-icon" src="Logo/Logo.png">
+      <h1>CTU-Buddy</h1>
+      <ul>
+        <li><a href="">Time table</a></li>
+        <li><a href="">Discussions</a></li>
+        <li><a href="">About Us</a></li>
+        <li><a href="">Contact Us</a></li>
+        <li><a href="">Share resources</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="heading">
+    <h1>About us</h1>
+    <p>CTU-Buddy your ultimate companion for a smoother and more organized campus life experience at Central Technical University (CTU). Founded by a group of passionate and driven students, CTU-Buddy is dedicated to making your academic journey easier, more efficient, and enjoyable.</p>
+  </div>
+  <div class="container">
+    <section class="about">
+      <div class="about-image">
+        <img src="Images/Being an older student.png">
+      </div>
+      <div class="about-content">
+        <h2>Our story</h2>
+        <p>The inception of CTU-Buddy can be traced back to a shared frustration among our founding members. As students ourselves, we often found it cumbersome to manage the various documents, assignments, and resources required throughout our academic pursuits. We recognized the need for a centralized platform that could streamline these processes and enhance communication within the campus community.
+          Our brainstorming sessions, fueled by late-night study sessions and countless cups of coffee, led us to envision a comprehensive website that would revolutionize student life on campus. The idea was simple yet powerful: create a virtual "buddy" that students could rely on for quick access to document uploads, announcements, and a direct line of communication with university departments.</p>
+        <a href="aboutus.html" class="read-more" id="toggle-button" onclick="toggleContent()">Show more</a>
+        <div id="more-content" class="hide-content">
+          <h2>Key Features</h2>
+          <p>The inception of CTU-Buddy can be traced back to a shared frustration among our founding members. As students ourselves, we often found it cumbersome to manage the various documents, assignments, and resources required throughout our academic pursuits. We recognized the need for a centralized platform that could streamline these processes and enhance communication within the campus community.
+            Our brainstorming sessions, fueled by late-night study sessions and countless cups of coffee, led us to envision a comprehensive website that would revolutionize student life on campus. The idea was simple yet powerful: create a virtual "buddy" that students could rely on for quick access to document uploads, announcements, and a direct line of communication with university departments.</p>
+          <h2>Our Mission</h2>
+          <p>At CTU-Buddy, our mission is to provide a user-friendly and efficient platform that empowers CTU students to excel academically and engage actively within the campus community. We understand the challenges that students face – from managing assignments and accessing important documents to connecting with faculty and peers. That's why we have meticulously designed and developed this website to address these pain points and offer a seamless experience.</p>
+          <h2>Key Features</h2>
+          <p> 1. Document Uploads Tired of carrying stacks of papers? CTU-Buddy allows you to effortlessly upload and organize your documents, assignments, and study materials in one secure place. Say goodbye to misplaced notes and hello to a clutter-free academic life.
+            2. Contact Us Page Communication is key. Our dedicated "Contact Us" page ensures that you can reach out to university departments, faculty, and support services with ease. Whether you have questions, feedback, or simply need guidance, we're here to connect you.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

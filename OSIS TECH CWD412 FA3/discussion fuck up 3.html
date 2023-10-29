@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dstyles.css">
+    <style>
+        
+        /* ... (Your existing CSS styles) ... */
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="Login.html">Login or Sign Up</a>
+        <a href="home.html">Home</a>
+        <a href="Discussion Page.html">Discussion</a>
+        <a href="fuckup2.html">About Us</a>
+        <a href="Contact Us.html">Contact Us</a>
+        <a href="Share resources.html">Share Resources</a>
+        <a href="#">Calendar</a>
+        <div class="language-select">
+            <label for="language-select">Select Language:</label>
+            <select id="language-select" onchange="changeLanguage()">
+                <option value="en" selected>English</option>
+                <option value="fr">French</option>
+                <option value="es">Spanish</option>
+            </select>
+        </div>
+    </div>
+    <div class="chat-container">
+        <div id="chat-area">
+            <!-- Display stored comments when the page loads -->
+        </div>
+        <div class="comment-section">
+            <textarea id="user-comment" placeholder="Type your message..."></textarea>
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <ul class="footer-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="Discussion Page.html">Discussion</a></li>
+                <li><a href="fuckup2.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="Share resources.html">Share Resources</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><img src="C:\Users\schal\Desktop\OSIS TECH CWD412 FA2 2\OSIS TECH CWD412 FA2\Logo.png" alt="Logo" class="footer-logo"></li>
+                <li><p class="footer-text">© CTU-Buddy 2023. All rights reserved.</p></li>
+            </ul>
+        </div>
+    </footer>
+    <script>
+        // Function to send a new message and store it locally
+        function sendMessage() {
+            var userComment = document.getElementById("user-comment").value;
+
+            if (userComment.trim() !== "") {
+                // Get existing comments from local storage or initialize an empty array
+                var comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+                // Add the new comment
+                comments.push(userComment);
+
+                // Save the updated comments array back to local storage
+                localStorage.setItem("comments", JSON.stringify(comments));
+
+                // Update the chat area to display all comments
+                displayComments();
+
+                // Clear the input field
+                document.getElementById("user-comment").value = "";
+            }
+        }
+
+        // Function to display comments in the chat area
+        function displayComments() {
+            var comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+            var chatArea = document.getElementById("chat-area");
+            chatArea.innerHTML = "";
+
+            comments.forEach(function (comment) {
+                var messageDiv = document.createElement("div");
+                messageDiv.classList.add("message");
+                messageDiv.textContent = comment;
+                chatArea.appendChild(messageDiv);
+            });
+        }
+
+        // Display comments when the page loads
+        displayComments();
+
+        // Function to change the language (existing function)
+        function changeLanguage() {
+            var languageSelect = document.getElementById("language-select");
+            var selectedLanguage = languageSelect.value;
+
+            // Update the page with the selected language (existing code)
+            // ...
+        }
+    </script>
+</body>
+</html>
