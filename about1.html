@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url('bkimg.png');
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+        background-size: cover;
+        background-position: center center;
+    }
+    .navbar {
+        background: linear-gradient(rgba(0, 123, 255, 0.7), rgba(0, 123, 255, 0.7)), url('navigation.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        padding: 10px;
+    }
+    .navbar a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        transition: color 0.7s ease;
+    }
+    .navbar a:hover {
+        color: #0056b3;
+        animation: navBarHover 0.7s ease-in-out;
+    }
+    @keyframes navBarHover {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-5px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    .container {
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .about-content {
+        background: linear-gradient(to bottom, #ddd, #bbb);
+        padding: 10px;
+        border-radius: 5px;
+    }
+   
+         /* Style for the footer container */
+  .footer-container {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 123, 255, 0.7), rgba(0, 123, 255, 0.7)), url('navigation.png'); 
+            background-repeat: no-repeat; 
+            background-size: cover; 
+            background-position: center center; 
+            padding: 10px; 
+  }
+
+  /* Style for the footer links */
+  .footer-links {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+  }
+
+  /* Style for the footer link items */
+  .footer-links li {
+    margin-right: 10px;
+  }
+
+  /* Style for the footer link text */
+  .footer-links li a {
+    color: white;
+    text-decoration: none;
+  }
+  </style>
+  </head>
+  </style>
+  <title>About Us</title>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+        <a href="login.html">Login or Sign Up</a>
+        <a href="home.html">Home</a>
+        <a href="Discussion Page.html">Discussion</a>
+        <a href="about1.html">About Us</a>
+        <a href="Contact Us.html">Contact Us</a>
+        <a href="Share resources.html">Share Resources</a>
+        <a href="calendar.html">Calendar</a>
+        <label for="language-select">Select Language:</label>
+        <select id="language-select" onchange="changeLanguage()">
+            <option value="en" selected>English</option>
+            <option value="fr">French</option>
+            <option value="es">Spanish</option>
+        </select>
+    </div>
+  </header>
+  <div class="container">
+  <div class="heading">
+    <h2>About us</h2>
+    <p>At CTU-Buddy, our mission is to provide a user-friendly and efficient platform that empowers CTU students to excel academically and engage actively within the campus community.</p>
+    <p>We understand the challenges that students face – from managing assignments and accessing important documents to connecting with faculty and peers.</p>
+    <p>That's why we have meticulously designed and developed this website to address these pain points and offer a seamless experience.</p>
+  </div>
+    <section class="about">
+      <div class="about-image">
+        <img src="Images/Being an older student.png">
+      </div>
+      <div class="about-content">
+        <h2>Main challenge</h2>
+        <p>The inception of CTU-Buddy can be traced back to a shared frustration among our founding members.</p>
+        <p>As students ourselves, we often found it cumbersome to manage the various documents, assignments, and resources required throughout our academic pursuits.</p>
+        <p>We recognized the need for a centralized platform that could streamline these processes and enhance communication within the campus community.</p>
+        <p>Our brainstorming sessions, fueled by late-night study sessions and countless cups of coffee, led us to envision a comprehensive website that would revolutionize student life on campus.</p>
+        <p>The idea was simple yet powerful: create a virtual "buddy" that students could rely on for quick access to document uploads, announcements, and a direct line of communication with university departments.</p>
+        
+        <h2>Our Mission</h2>
+        <p>At CTU-Buddy, our mission is to provide a user-friendly and efficient platform that empowers CTU students to excel academically and engage actively within the campus community. We understand the challenges that students face – from managing assignments and accessing important documents to connecting with faculty and peers. That's why we have meticulously designed and developed this website to address these pain points and offer a seamless experience.</p>
+        <h2>Key Features</h2>
+        <p>1.Digital Docs: Say goodbye to paper clutter! Upload, store, and retrieve your academic materials effortlessly with CTU-Buddy.</p>
+        <p>2.Quick Connect: Our "Contact Us" page is a direct portal to faculty, departments, and support. Have a question or feedback? Reach out with ease.</p>
+        <p>3.Event Hub: Stay updated on CTU events, from insightful seminars to vibrant gatherings, ensuring you're always in the loop.</p>
+        <p>4.Course Forums: Engage in subject-centric forums. Share insights, seek answers, and collaborate on academic quandaries.
+        <p>5.Resource Tracker: Bookmark and quickly access essential academic tools and resources tailored to your courses and interests.</p>
+        <p>6.Notifications**: Get real-time alerts on grades, assignment due dates, and university announcements, keeping you always informed.</p>
+          
+        <h3> <p>Hop on for a simplified, yet enriched CTU-Buddy journey!</p></h3>
+      </div>
+    </section>
+  </div>
+  <footer>
+    <div class="footer-container">
+      <ul class="footer-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="Discussion Page.html">Discussion</a></li>
+        <li><a href="about1.html">About Us</a></li>
+        <li><a href="Contact Us.html">Contact Us</a></li>
+        <li><a href="Share resources.html">Share Resources</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

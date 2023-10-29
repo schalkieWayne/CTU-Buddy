@@ -1,0 +1,19 @@
+/* Add the styles from dstyles.css here */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    background-image: url("bkimg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #333;
+}
+
+.navbar {
+    background: linear-gradient(rgba(0, 123, 255, 0.7), rgba(0, 123, 255, 0.7)), url('navigation.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 10px;
+}

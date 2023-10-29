@@ -1,0 +1,142 @@
+body {
+    background-image: url("bkimg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 100px;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  h2 {
+    text-align: center;
+    color: #337ab7;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+  }
+  
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    background-color: #e6e6e6;
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #286090;
+  }
+  
+  .signup-link {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .signup-link a {
+    color: #337ab7;
+    text-decoration: none;
+  }
+  
+  .error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .image-container img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    animation: imageLoop 8s infinite;
+  }
+  
+  @keyframes imageLoop {
+    0% {
+      opacity: 0;
+      transform: translateX(200%);
+    }
+    20% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    25% {
+      opacity: 1;
+      transform: translateX(-100%);
+    }
+    45% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    50% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    70% {
+      opacity: 1;
+      transform: translateX(-100%);
+    }
+    75% {
+      opacity: 1;
+      transform: translateX(-200%);
+    }
+    95% {
+      opacity: 0;
+      transform: translateX(-200%);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(200%);
+    }
+  }

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modern Calendar</title>
+  <style>
+     
+    .navbar { 
+            background: linear-gradient(rgba(0, 123, 255, 0.7), rgba(0, 123, 255, 0.7)), url('navigation.png'); 
+            background-repeat: no-repeat; 
+            background-size: cover; 
+            background-position: center center; 
+            padding: 10px; 
+        } 
+        .navbar a { 
+            color: white; 
+            margin: 0 15px; 
+            text-decoration: none; 
+            transition: color 0.7s ease; 
+        } 
+        .navbar a:hover { 
+            color: #0056b3; 
+            animation: navBarHover 0.7s ease-in-out; 
+        } 
+    @keyframes navBarHover {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-5px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    /* Style for the body and background */
+    body { 
+            font-family: Arial, sans-serif; 
+            background-image: url('bkimg.png'); 
+          
+            margin: 0; 
+            padding: 20px; 
+            background-size: cover; 
+            background-position: center center; 
+            background-repeat: no-repeat;
+        } 
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #calendar {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    #calendar th {
+      background-color: #0caaff;
+      color: white;
+      font-weight: bold;
+      padding: 15px;
+      text-align: center;
+      border: 1px solid #f3f7fa;
+    }
+
+    #calendar td {
+      padding: 15px;
+      text-align: center;
+      border: 1px solid #07aafc;
+      font-size: 18px;
+    }
+
+    #calendar td:hover {
+      background-color: #f0f0f0;
+    }
+
+    select {
+      padding: 10px;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+
+    .controls {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+       /* Style for the footer container */
+  .footer-container {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 123, 255, 0.7), rgba(0, 123, 255, 0.7)), url('navigation.png'); 
+            background-repeat: no-repeat; 
+            background-size: cover; 
+            background-position: center center; 
+            padding: 10px; 
+  }
+
+  /* Style for the footer links */
+  .footer-links {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+  }
+
+  /* Style for the footer link items */
+  .footer-links li {
+    margin-right: 10px;
+  }
+
+  /* Style for the footer link text */
+  .footer-links li a {
+    color: white;
+    text-decoration: none;
+  }
+  </style>
+</head>
+<body>
+  <h1>Calender</h1>
+
+  <div class="controls">
+    <label for="month">Select Month:</label>
+    <select id="month" onchange="displayCalendar()">
+      <option value="0">January</option>
+      <option value="1">February</option>
+      <option value="2">March</option>
+      <option value="3">April</option>
+      <option value="4">May</option>
+      <option value="5">June</option>
+      <option value="6">July</option>
+      <option value="7">August</option>
+      <option value="8">September</option>
+      <option value="9">October</option>
+      <option value="10">November</option>
+      <option value="11">December</option>
+    </select>
+    <label for="year">Select Year:</label>
+    <select id="year" onchange="displayCalendar()">
+      <script>
+        var yearDropdown = document.getElementById("year");
+        var currentYear = new Date().getFullYear();
+        for (var year = currentYear; year <= 2100; year++) {
+          var option = document.createElement("option");
+          option.value = year;
+          option.text = year;
+          yearDropdown.appendChild(option);
+        }
+      </script>
+    </select>
+  </div>
+
+  <table id="calendar">
+    <thead>
+      <tr>
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+      </tr>
+    </thead>
+    <tbody id="calendar-body">
+      <!-- Calendar days will be dynamically added here -->
+    </tbody>
+  </table>
+
+  <script>
+    function displayCalendar() {
+  var month = document.getElementById("month").value;
+  var year = document.getElementById("year").value;
+  var calendarBody = document.getElementById("calendar-body");
+  calendarBody.innerHTML = ""; // Clear existing calendar days
+  var daysInMonth = new Date(year, parseInt(month) + 1, 0).getDate(); // Use month + 1 to get the correct days in month
+  var firstDay = new Date(year, month, 1).getDay(); // Use month to get the correct first day
+  var row = document.createElement("tr");
+
+  // Adjust the starting day based on the first day of the month
+  for (var i = 0; i < firstDay; i++) {
+    var cell = document.createElement("td");
+    cell.textContent = "";
+    row.appendChild(cell);
+  }
+
+  var dayCounter = 1;
+
+  for (var i = 1; i <= daysInMonth; i++) {
+    var cell = document.createElement("td");
+    cell.textContent = dayCounter;
+
+    // Add event listener to each day cell
+    cell.addEventListener("click", function() {
+      var event = prompt("Enter event for this day:");
+      if (event) {
+        // Create a new event element
+        var eventElement = document.createElement("div");
+        eventElement.textContent = event;
+        eventElement.classList.add("event");
+        this.appendChild(eventElement);
+      } else {
+        // Delete event if cell already has one
+        if (this.querySelector(".event")) {
+          this.querySelector(".event").remove();
+        }
+      }
+    });
+
+    row.appendChild(cell);
+    dayCounter++;
+
+    if ((i + firstDay) % 7 === 0) {
+      calendarBody.appendChild(row);
+      row = document.createElement("tr");
+    }
+  }
+
+  // Add any remaining days
+  if (row.children.length > 0) {
+    calendarBody.appendChild(row);
+  }
+}
+
+// Display calendar for initial month and year
+displayCalendar();
+  </script>
+  <footer>
+    <div class="footer-container">
+        <ul class="footer-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="Discussion Page.html">Discussion</a></li>
+            <li><a href="fuckup2.html">About Us</a></li>
+            <li><a href="Contact Us11.html">Contact Us</a></li>
+            <li><a href="Share resources.html">Share Resources</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><img src="Logo.png" alt="Logo" class="footer-logo"></li>
+            <li><p class="footer-text">&copy; CTU-Buddy 2023. All rights reserved.</p></li>
+        </ul>
+    </div>
+    </div>
+  </footer>
+</body>
+</html>
